@@ -11,7 +11,7 @@
 #include<map>
 #define MAX 100001
 using namespace std;
-int main (){
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(NULL);
 	cout.tie(NULL);
@@ -39,9 +39,15 @@ int main (){
 			ans += tmp;
 		}
 		if (ans == etc)  break;
-		else if (ans > etc) left++;
-		else right--;
+		else if (ans < etc) {
+			right = mid - 1;
+		}
+		else {
+			// 적어도 M만큼의 떡을 얻기 위해
+			result = mid;
+			left = mid + 1;
+		}
 	}
-	cout << mid;
+	cout << result;
 
 }
