@@ -16,7 +16,7 @@ int num[MAX];
 int N, M;
 int findParent(int a) {
     if (num[a] == a) return a;
-    num[a] = findParent(num[a]);
+    return num[a] = findParent(num[a]);
 }
 void unionFInd(int a, int b) {
     a = findParent( a);
